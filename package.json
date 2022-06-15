@@ -8,6 +8,7 @@
     "@midwayjs/core": "^3.0.0",
     "@midwayjs/decorator": "^3.0.0",
     "@midwayjs/orm": "^3.3.6",
+    "@midwayjs/swagger": "^3.3.13",
     "@midwayjs/web": "^3.0.0",
     "egg": "^2.0.0",
     "mysql2": "^2.3.3",
@@ -21,8 +22,9 @@
     "@types/node": "14",
     "cross-env": "^6.0.0",
     "egg-mock": "^3.26.0",
-    "mwts": "^1.0.5",
     "jest": "^26.4.0",
+    "mwts": "^1.0.5",
+    "swagger-ui-dist": "^4.12.0",
     "ts-jest": "^26.2.0",
     "typescript": "~4.6.0"
   },
