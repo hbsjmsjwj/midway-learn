@@ -10,6 +10,7 @@
     "@midwayjs/orm": "^3.3.6",
     "@midwayjs/web": "^3.0.0",
     "egg": "^2.0.0",
+    "mysql2": "^2.3.3",
     "typeorm": "^0.3.6"
   },
   "devDependencies": {
