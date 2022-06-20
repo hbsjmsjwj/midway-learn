@@ -16,9 +16,13 @@ export default (appInfo: MidwayAppInfo) => {
       port: 3306,
       username: 'root',
       password: '123456',
-      database: 'zdsc',
+      database: 'jyapi',
       synchronize: true,     // 如果第一次使用，不存在表，有同步的需求可以写 true
       logging: false,
+    },
+    jwt: {
+      secret: 'jwjkw', // fs.readFileSync('xxxxx.key')
+      expiresIn: '2d'   // https://github.com/vercel/ms
     },
     // security: {
     //   csrf: false,

@@ -4,6 +4,7 @@ import { Application } from 'egg';
 import { join } from 'path';
 import * as orm from '@midwayjs/orm';
 import * as swagger from '@midwayjs/swagger';
+import * as jwt from '@midwayjs/jwt';
 import * as egg from '@midwayjs/web';
 
 @Configuration({
@@ -29,8 +30,15 @@ export class ContainerConfiguratin {}
   imports: [
     {
       component: swagger,
-      enabledEnvironment: ['local'],
+      enabledEnvironment: ['local'], //只在本地开启
     },
   ],
 })
 export class ContainerConfiguration {}
+
+@Configuration({
+  imports: [jwt],
+})
+export class AutoConfiguration {
+  //...
+}
