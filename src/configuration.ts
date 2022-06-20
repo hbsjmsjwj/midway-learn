@@ -6,6 +6,7 @@ import * as orm from '@midwayjs/orm';
 import * as swagger from '@midwayjs/swagger';
 import * as jwt from '@midwayjs/jwt';
 import * as egg from '@midwayjs/web';
+import { MockMiddleware } from './middleware/mock.middleware';
 
 @Configuration({
   imports: [egg],
@@ -15,7 +16,9 @@ export class ContainerLifeCycle implements ILifeCycle {
   @App()
   app: Application;
 
-  async onReady() {}
+  async onReady() {
+    this.app.useMiddleware(MockMiddleware);
+  }
 }
 
 @Configuration({

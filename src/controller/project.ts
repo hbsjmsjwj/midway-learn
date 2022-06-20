@@ -1,4 +1,4 @@
-import { Inject, Controller, Get } from '@midwayjs/decorator';
+import { Inject, Controller, Get} from '@midwayjs/decorator';
 import { Context } from 'egg';
 import { ProjectService } from '../service/project';
 
