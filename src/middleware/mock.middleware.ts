@@ -9,22 +9,31 @@ export class MockMiddleware implements IMiddleware<Context, NextFunction> {
   @Inject()
   projectService: ProjectService;
   resolve() {
-    console.log('jwj-');
     return async (ctx: Context, next: NextFunction) => {
-      console.log('jwj');
       let path = ctx.path;
-      // let header = ctx.request.header;
+      let header = ctx.request.header;
       if (path.indexOf('/mock/') !== 0) {
         // 不是mock接口
         if (next) await next();
         return true;
       }
 
-      next();
+      ctx.set('Access-Control-Allow-Origin', header.origin);
+      ctx.set('Access-Control-Allow-Credentials', 'true');
       let paths = path.split('/');
-      let peojectId = paths[2];
-      console.log('mock---', paths, peojectId);
-      return (ctx.body = 'mock');
+      let projectId = paths[2];
+      const hasProId = await this.projectService.hasPro(projectId);
+      if (!hasProId) {
+        return (ctx.body = {
+          code: '-1',
+          data: `数据库没有此项目${projectId}`,
+          message: `项目不存在`,
+        });
+      }
+
+      return (ctx.body = {
+        data: 'mock',
+      });
     };
   }
   static getName(): string {
