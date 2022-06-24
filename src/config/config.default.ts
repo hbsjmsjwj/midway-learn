@@ -5,7 +5,7 @@ export default (appInfo: MidwayAppInfo) => {
     // use for cookie sign key, should change to your own and keep security
     keys: appInfo.name + '_1655260656697_1380',
     egg: {
-      port: 7001,
+      port: 7002,
     },
     orm: {
       /**
