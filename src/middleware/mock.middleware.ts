@@ -15,7 +15,7 @@ export class MockMiddleware implements IMiddleware<Context, NextFunction> {
       if (path.indexOf('/mock/') !== 0) {
         // 不是mock接口
         if (next) await next();
-        return true;
+        // return true;
       }
 
       ctx.set('Access-Control-Allow-Origin', header.origin);
