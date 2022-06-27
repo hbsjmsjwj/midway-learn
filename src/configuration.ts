@@ -7,9 +7,9 @@ import * as swagger from '@midwayjs/swagger';
 import * as jwt from '@midwayjs/jwt';
 import * as egg from '@midwayjs/web';
 import { MockMiddleware } from './middleware/mock.middleware';
-
+import * as grpc from '@midwayjs/grpc';
 @Configuration({
-  imports: [egg],
+  imports: [egg, grpc],
   importConfigs: [join(__dirname, './config')],
 })
 export class ContainerLifeCycle implements ILifeCycle {

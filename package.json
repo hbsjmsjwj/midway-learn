@@ -9,6 +9,7 @@
     "@midwayjs/decorator": "^3.0.0",
     "@midwayjs/jwt": "^3.3.11",
     "@midwayjs/orm": "^3.3.6",
+    "@midwayjs/prometheus": "^3.3.6",
     "@midwayjs/socketio": "3",
     "@midwayjs/swagger": "^3.3.13",
     "@midwayjs/web": "^3.0.0",
@@ -18,7 +19,7 @@
     "@types/socket.io-client": "^3.0.0",
     "egg": "^2.0.0",
     "mysql2": "^2.3.3",
-    "safeify": "^5.0.6",
+    "safeify": "^5.0.5",
     "socket.io-client": "^4.5.1",
     "typeorm": "^0.3.6"
   },
@@ -26,8 +27,8 @@
     "@midwayjs/cli": "^1.0.0",
     "@midwayjs/consul": "^3.3.14",
     "@midwayjs/egg-ts-helper": "^1.0.1",
-    "@midwayjs/grpc": "^3.3.11",
-    "@midwayjs/grpc-helper": "^1.0.7",
+    "@midwayjs/grpc": "^3.0.0",
+    "@midwayjs/grpc-helper": "^1.0.0",
     "@midwayjs/mock": "^3.0.0",
     "@midwayjs/rabbitmq": "^3.3.5",
     "@midwayjs/ws": "^3.3.5",
@@ -57,7 +58,8 @@
     "lint": "mwts check",
     "lint:fix": "mwts fix",
     "ci": "npm run cov",
-    "build": "midway-bin build -c"
+    "build": "midway-bin build -c",
+    "generate": "tsproto --path proto --output src/domain"
   },
   "midway-bin-clean": [
     ".vscode/.tsbuildinfo",
