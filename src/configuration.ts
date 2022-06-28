@@ -7,20 +7,23 @@ import * as swagger from '@midwayjs/swagger';
 import * as jwt from '@midwayjs/jwt';
 import * as egg from '@midwayjs/web';
 import * as consul from '@midwayjs/consul';
+import * as rabbitmq from '@midwayjs/rabbitmq';
 
 // import { MockMiddleware } from './middleware/mock.middleware';
 import * as grpc from '@midwayjs/grpc';
 
 @Configuration({
-  imports: [
-    consul,
-  ],
+  imports: [consul],
   importConfigs: [join(__dirname, './config')],
   conflictCheck: true,
 })
 export class ContainerConfiguration {}
 @Configuration({
   imports: [egg, grpc],
+  importConfigs: [join(__dirname, './config')],
+})
+@Configuration({
+  imports: [ rabbitmq],
   importConfigs: [join(__dirname, './config')],
 })
 export class ContainerLifeCycle implements ILifeCycle {
