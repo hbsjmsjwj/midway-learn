@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@midwayjs/bootstrap": "^3.0.0",
+    "@midwayjs/consul": "^3.0.0",
     "@midwayjs/core": "^3.0.0",
     "@midwayjs/decorator": "^3.0.0",
     "@midwayjs/jwt": "^3.3.11",
@@ -21,8 +22,7 @@
     "mysql2": "^2.3.3",
     "safeify": "^5.0.5",
     "socket.io-client": "^4.5.1",
-    "typeorm": "^0.3.6",
-    "@midwayjs/consul": "^3.0.0"
+    "typeorm": "^0.3.6"
   },
   "devDependencies": {
     "@midwayjs/cli": "^1.0.0",
