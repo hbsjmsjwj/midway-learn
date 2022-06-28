@@ -1,5 +1,4 @@
 import { MidwayConfig, MidwayAppInfo } from '@midwayjs/core';
-import { join } from 'path';
 
 export default (appInfo: MidwayAppInfo) => {
   return {
@@ -28,22 +27,5 @@ export default (appInfo: MidwayAppInfo) => {
     // security: {
     //   csrf: false,
     // },
-    grpcServer: {
-      services: [
-        {
-          url: 'localhost:7002',
-          protoPath: join(appInfo.appDir, 'proto/helloworld.proto'),
-          package: 'helloworld'
-        },
-        {
-          protoPath: join(appInfo.appDir, 'proto/hero.proto'),
-          package: 'hero',
-        },
-        {
-          protoPath: join(appInfo.appDir, 'proto/helloworld.proto'),
-          package: 'helloworld',
-        },
-      ],
-    },
   } as MidwayConfig;
 };
