@@ -28,7 +28,7 @@
     "@midwayjs/consul": "^3.3.14",
     "@midwayjs/egg-ts-helper": "^1.0.1",
     "@midwayjs/grpc": "^3.0.0",
-    "@midwayjs/grpc-helper": "^1.0.0",
+    "@midwayjs/grpc-helper": "^1.0.7",
     "@midwayjs/mock": "^3.0.0",
     "@midwayjs/rabbitmq": "^3.3.5",
     "@midwayjs/ws": "^3.3.5",

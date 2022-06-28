@@ -1,4 +1,5 @@
 import { MidwayConfig, MidwayAppInfo } from '@midwayjs/core';
+import { join } from 'path';
 
 export default (appInfo: MidwayAppInfo) => {
   return {
@@ -24,6 +25,18 @@ export default (appInfo: MidwayAppInfo) => {
       secret: 'jwjkw', // fs.readFileSync('xxxxx.key')
       expiresIn: '2d', // https://github.com/vercel/ms
     },
+    grpcServer: {
+      services: [
+        // {
+        //   protoPath: join(appInfo.appDir, 'proto/hero.proto'),
+        //   package: 'hero',
+        // },
+        {
+          protoPath: join(appInfo.appDir, 'proto/helloworld.proto'),
+          package: 'helloworld',
+        }
+      ],
+    }
     // security: {
     //   csrf: false,
     // },
