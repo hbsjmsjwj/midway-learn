@@ -2,6 +2,7 @@ import { createApp, close } from '@midwayjs/mock';
 import { Framework, createGRPCConsumer } from '@midwayjs/grpc';
 import { join } from 'path';
 import { helloworld } from '../src/domain/helloworld';
+import * as consul from '@midwayjs/consul'
 
 describe('test/index.test.ts', () => {
 

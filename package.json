@@ -21,11 +21,11 @@
     "mysql2": "^2.3.3",
     "safeify": "^5.0.5",
     "socket.io-client": "^4.5.1",
-    "typeorm": "^0.3.6"
+    "typeorm": "^0.3.6",
+    "@midwayjs/consul": "^3.0.0"
   },
   "devDependencies": {
     "@midwayjs/cli": "^1.0.0",
-    "@midwayjs/consul": "^3.3.14",
     "@midwayjs/egg-ts-helper": "^1.0.1",
     "@midwayjs/grpc": "^3.0.0",
     "@midwayjs/grpc-helper": "^1.0.7",
