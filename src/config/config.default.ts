@@ -53,10 +53,20 @@ export default (appInfo: MidwayAppInfo) => {
         name: 'midway-egg',
         // others consul service definition
       },
-    }
+    },
+    rabbitmq: {
+      url: {
+        protocol: 'amqp',
+        hostname: 'localhost',
+        port: 5672,
+        username: 'guest',
+        password: 'guest',
+        vhost: '/',
+      },
+    },
 
     // security: {
     //   csrf: false,
     // },
-  }
+  };
 };

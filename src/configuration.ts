@@ -18,12 +18,9 @@ import * as grpc from '@midwayjs/grpc';
   conflictCheck: true,
 })
 export class ContainerConfiguration {}
+
 @Configuration({
-  imports: [egg, grpc],
-  importConfigs: [join(__dirname, './config')],
-})
-@Configuration({
-  imports: [ rabbitmq],
+  imports: [egg, rabbitmq, grpc],
   importConfigs: [join(__dirname, './config')],
 })
 export class ContainerLifeCycle implements ILifeCycle {
@@ -51,7 +48,6 @@ export class ContainerConfiguratin {}
     },
   ],
 })
-
 @Configuration({
   imports: [jwt],
 })
