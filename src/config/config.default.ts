@@ -74,6 +74,11 @@ export default (appInfo: MidwayAppInfo) => {
       // endpoint: 'http://localhost:14268/api/traces',
       maxPacketSize: 65000, // optional
     },
+    prometheus: {
+      labels: {
+        APP_NAME: 'demo_project',
+      },
+    },
     // security: {
     //   csrf: false,
     // },

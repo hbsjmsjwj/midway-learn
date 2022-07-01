@@ -1,0 +1,20 @@
+version: '2.2'
+services:
+  tapi:
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '50m'
+    image: prom/prometheus
+    restart: always
+    volumes:
+      - ./prometheus_data:/prometheus_data:rw
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./targets.json:/etc/prometheus/targets.json
+    command:
+      - '--storage.tsdb.path=/prometheus_data'
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.retention=10d'
+      - '--web.enable-lifecycle'
+    ports:
+      - '9090:9090'

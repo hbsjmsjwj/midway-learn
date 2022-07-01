@@ -12,6 +12,7 @@ import * as rabbitmq from '@midwayjs/rabbitmq';
 // import { MockMiddleware } from './middleware/mock.middleware';
 import * as grpc from '@midwayjs/grpc';
 import * as otel from '@midwayjs/otel';
+import * as prometheus from '@midwayjs/prometheus';
 
 
 export class MainConfiguration {}
@@ -26,7 +27,7 @@ export class MainConfiguration {}
 export class ContainerConfiguration {}
 
 @Configuration({
-  imports: [egg, rabbitmq, grpc, otel],
+  imports: [egg, rabbitmq, grpc, otel,prometheus],
   importConfigs: [join(__dirname, './config')],
 })
 export class ContainerLifeCycle implements ILifeCycle {
