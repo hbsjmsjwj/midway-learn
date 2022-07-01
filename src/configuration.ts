@@ -11,6 +11,12 @@ import * as rabbitmq from '@midwayjs/rabbitmq';
 
 // import { MockMiddleware } from './middleware/mock.middleware';
 import * as grpc from '@midwayjs/grpc';
+import * as otel from '@midwayjs/otel';
+
+
+export class MainConfiguration {}
+
+/**************dev 启动不走bootstrap.js*  测试Jaeger 要先build 再 node bootstrap.js*********************************************************************** */
 
 @Configuration({
   imports: [consul],
@@ -20,7 +26,7 @@ import * as grpc from '@midwayjs/grpc';
 export class ContainerConfiguration {}
 
 @Configuration({
-  imports: [egg, rabbitmq, grpc],
+  imports: [egg, rabbitmq, grpc, otel],
   importConfigs: [join(__dirname, './config')],
 })
 export class ContainerLifeCycle implements ILifeCycle {

@@ -34,6 +34,7 @@ export default (appInfo: MidwayAppInfo) => {
       ],
     },
     consul: {
+      // 启动consul服务 consul agent -dev
       provider: {
         // 注册本服务
         register: true,
@@ -64,7 +65,15 @@ export default (appInfo: MidwayAppInfo) => {
         vhost: '/',
       },
     },
-
+    otel: {
+      tags: [], // optional
+      // You can use the default UDPSender
+      host: 'localhost', // optional
+      port: 6832, // optional
+      // OR you can use the HTTPSender as follows
+      // endpoint: 'http://localhost:14268/api/traces',
+      maxPacketSize: 65000, // optional
+    },
     // security: {
     //   csrf: false,
     // },
